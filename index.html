@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 38 JS</title>
+    <style>
+        .contoh-css {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="tombol();" name="button">Jalankan</button>
+    <br>
+    <br>
+    <hr>
+    Atribut <b>removeNamedItem()</b>:
+    <p>
+        <input type="text" value="Inputan">
+    </p>
+    <hr>
+    Atribut <b>setNamedItem()</b>:
+    <p><i>Contoh</i></p>
+    <hr>
+    Atribut <b>value()</b>:
+    <p id="contoh">contoh</p>
+    <hr>
+
+    <script>
+        function tombol() {
+            let a = document.getElementsByTagName('input')[0];
+            a.attributes.removeNamedItem('value');
+
+            let b = document.getElementsByTagName('p')[1];
+            let c = document.createAttribute('class');
+            c.value = 'contoh-css';
+            b.attributes.setNamedItem(c);
+
+            let d = document.getElementsByTagName('button')[0];
+            document.getElementById('contoh').innerHTML = d.attributes[0].value;
+        }
+    </script>
+</body>
+</html>
